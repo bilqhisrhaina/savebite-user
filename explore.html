@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jelajahi - SAVEBITE</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="logo">
+      SAVEBITE
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="explore.html">Jelajahi</a>
+    </nav>
+
+    <div class="nav-button">
+      <button class="btn-login">Masuk</button>
+      <button class="btn-register">Daftar</button>
+    </div>
+
+  </header>
+
+
+  <main class="explore-page">
+
+    <section class="explore-header">
+
+      <h1>Jelajahi Makanan</h1>
+
+      <p>
+        Temukan makanan surplus di sekitar kamu dengan harga yang lebih hemat.
+      </p>
+
+
+      <div class="explore-search">
+
+        <input
+          type="text"
+          placeholder="Cari makanan atau restoran..."
+        >
+
+        <button>
+          🔍
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section class="filter-section">
+
+      <h3>Kategori</h3>
+
+      <div class="category-list">
+
+        <button class="category active">
+          Semua
+        </button>
+
+        <button class="category">
+          Makanan Berat
+        </button>
+
+        <button class="category">
+          Roti & Pastry
+        </button>
+
+        <button class="category">
+          Minuman
+        </button>
+
+        <button class="category">
+          Healthy Food
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section class="explore-content">
+
+      <aside class="filter-sidebar">
+
+        <h3>Filter</h3>
+
+        <div class="filter-group">
+
+          <p>Harga</p>
+
+          <label>
+            <input type="checkbox">
+            Di bawah Rp10.000
+          </label>
+
+          <label>
+            <input type="checkbox">
+            Rp10.000 - Rp20.000
+          </label>
+
+          <label>
+            <input type="checkbox">
+            Rp20.000 - Rp30.000
+          </label>
+
+          <label>
+            <input type="checkbox">
+            Di atas Rp30.000
+          </label>
+
+        </div>
+
+
+        <div class="filter-group">
+
+          <p>Lokasi</p>
+
+          <select>
+            <option>Purwakarta</option>
+            <option>Campaka</option>
+            <option>Jatiluhur</option>
+            <option>Babakancikao</option>
+          </select>
+
+        </div>
+
+
+        <div class="filter-group">
+
+          <p>Urutkan</p>
+
+          <select>
+            <option>Terdekat</option>
+            <option>Harga Termurah</option>
+            <option>Diskon Terbesar</option>
+          </select>
+
+        </div>
+
+      </aside>
+
+
+      <div class="explore-grid">
+
+
+        <!-- Produk 1 -->
+        <div class="food-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80"
+            alt="Nasi Ayam"
+          >
+
+          <div class="food-content">
+
+            <h3>Nasi Ayam Teriyaki</h3>
+
+            <p class="merchant">
+              Resto Kita
+            </p>
+
+            <div class="product-meta">
+              <span>📍 1,2 km</span>
+              <span>⏰ 2 jam lagi</span>
+            </div>
+
+            <div class="price">
+              <span class="old-price">Rp28.000</span>
+              <span class="new-price">Rp18.000</span>
+            </div>
+
+            <a href="detail.html" class="detail-link">
+              Lihat Detail
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Produk 2 -->
+        <div class="food-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80"
+            alt="Sushi"
+          >
+
+          <div class="food-content">
+
+            <h3>Paket Sushi</h3>
+
+            <p class="merchant">
+              SushiGo
+            </p>
+
+            <div class="product-meta">
+              <span>📍 0,8 km</span>
+              <span>⏰ 3 jam lagi</span>
+            </div>
+
+            <div class="price">
+              <span class="old-price">Rp47.000</span>
+              <span class="new-price">Rp30.000</span>
+            </div>
+
+            <a href="detail.html" class="detail-link">
+              Lihat Detail
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Produk 3 -->
+        <div class="food-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80"
+            alt="Roti"
+          >
+
+          <div class="food-content">
+
+            <h3>Roti Manis</h3>
+
+            <p class="merchant">
+              Bakery Time
+            </p>
+
+            <div class="product-meta">
+              <span>📍 0,5 km</span>
+              <span>⏰ 4 jam lagi</span>
+            </div>
+
+            <div class="price">
+              <span class="old-price">Rp15.000</span>
+              <span class="new-price">Rp12.000</span>
+            </div>
+
+            <a href="detail.html" class="detail-link">
+              Lihat Detail
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Produk 4 -->
+        <div class="food-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80"
+            alt="Salad"
+          >
+
+          <div class="food-content">
+
+            <h3>Salad Bowl</h3>
+
+            <p class="merchant">
+              Healthy Bites
+            </p>
+
+            <div class="product-meta">
+              <span>📍 1,5 km</span>
+              <span>⏰ 5 jam lagi</span>
+            </div>
+
+            <div class="price">
+              <span class="old-price">Rp30.000</span>
+              <span class="new-price">Rp20.000</span>
+            </div>
+
+            <a href="detail.html" class="detail-link">
+              Lihat Detail
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

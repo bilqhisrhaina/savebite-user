@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reservasi - SAVEBITE</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="logo">
+      SAVEBITE
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="explore.html">Jelajahi</a>
+    </nav>
+
+    <div class="nav-button">
+      <button class="btn-login">Masuk</button>
+      <button class="btn-register">Daftar</button>
+    </div>
+
+  </header>
+
+
+  <main class="reservation-page">
+
+    <a href="detail.html" class="back-link">
+      ← Kembali ke Detail
+    </a>
+
+    <div class="reservation-container">
+
+      <!-- BAGIAN KIRI -->
+      <section class="reservation-left">
+
+        <h1>Reservasi Makanan</h1>
+
+        <p class="reservation-subtitle">
+          Atur jumlah pesanan dan waktu pengambilan makananmu.
+        </p>
+
+
+        <!-- PRODUK -->
+        <div class="reservation-product">
+
+          <img
+            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=500&q=80"
+            alt="Nasi Ayam Teriyaki"
+          >
+
+          <div>
+
+            <h3>Nasi Ayam Teriyaki</h3>
+
+            <p>Resto Kita</p>
+
+            <span class="reservation-price">
+              Rp18.000
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- JUMLAH -->
+        <div class="reservation-field">
+
+          <label>
+            Jumlah Pesanan
+          </label>
+
+          <div class="quantity-control">
+
+            <button onclick="decreaseQuantity()">
+              −
+            </button>
+
+            <span id="quantity">
+              1
+            </span>
+
+            <button onclick="increaseQuantity()">
+              +
+            </button>
+
+          </div>
+
+          <small>
+            Stok tersedia: 5 porsi
+          </small>
+
+        </div>
+
+
+        <!-- WAKTU -->
+        <div class="reservation-field">
+
+          <label for="pickupDate">
+            Tanggal Pengambilan
+          </label>
+
+          <input
+            type="date"
+            id="pickupDate"
+          >
+
+        </div>
+
+
+        <div class="reservation-field">
+
+          <label for="pickupTime">
+            Waktu Pengambilan
+          </label>
+
+          <select id="pickupTime">
+
+            <option value="">
+              Pilih waktu pengambilan
+            </option>
+
+            <option>
+              16.00 - 17.00 WIB
+            </option>
+
+            <option>
+              17.00 - 18.00 WIB
+            </option>
+
+            <option>
+              18.00 - 19.00 WIB
+            </option>
+
+            <option>
+              19.00 - 20.00 WIB
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- CATATAN -->
+        <div class="reservation-field">
+
+          <label for="notes">
+            Catatan
+            <span>(opsional)</span>
+          </label>
+
+          <textarea
+            id="notes"
+            placeholder="Contoh: Saya ambil sekitar pukul 18.30..."
+          ></textarea>
+
+        </div>
+
+      </section>
+
+
+      <!-- BAGIAN KANAN -->
+      <aside class="order-summary">
+
+        <h2>Ringkasan Pesanan</h2>
+
+
+        <div class="summary-row">
+
+          <span>Harga per porsi</span>
+
+          <span>
+            Rp18.000
+          </span>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>Jumlah</span>
+
+          <span id="summaryQuantity">
+            1
+          </span>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="summary-row total-row">
+
+          <strong>Total</strong>
+
+          <strong id="totalPrice">
+            Rp18.000
+          </strong>
+
+        </div>
+
+
+        <div class="pickup-info">
+
+          ℹ️ Pembayaran dilakukan langsung di merchant saat makanan diambil.
+
+        </div>
+
+
+        <a
+          href="success.html"
+          class="confirm-reservation"
+          onclick="return validateReservation()"
+        >
+          Konfirmasi Reservasi
+        </a>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    let quantity = 1;
+
+    const price = 18000;
+
+    const maxStock = 5;
+
+
+    function increaseQuantity() {
+
+      if (quantity < maxStock) {
+
+        quantity++;
+
+        updateSummary();
+
+      }
+
+    }
+
+
+    function decreaseQuantity() {
+
+      if (quantity > 1) {
+
+        quantity--;
+
+        updateSummary();
+
+      }
+
+    }
+
+
+    function updateSummary() {
+
+      document.getElementById("quantity").innerText =
+        quantity;
+
+      document.getElementById("summaryQuantity").innerText =
+        quantity;
+
+      const total =
+        quantity * price;
+
+      document.getElementById("totalPrice").innerText =
+        "Rp" + total.toLocaleString("id-ID");
+
+    }
+
+
+    function validateReservation() {
+
+      const date =
+        document.getElementById("pickupDate").value;
+
+      const time =
+        document.getElementById("pickupTime").value;
+
+
+      if (date === "") {
+
+        alert("Pilih tanggal pengambilan terlebih dahulu.");
+
+        return false;
+
+      }
+
+
+      if (time === "") {
+
+        alert("Pilih waktu pengambilan terlebih dahulu.");
+
+        return false;
+
+      }
+
+
+      return true;
+
+    }
+
+  </script>
+
+</body>
+
+</html>
